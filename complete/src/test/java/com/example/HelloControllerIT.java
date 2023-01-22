@@ -20,4 +20,10 @@ public class HelloControllerIT {
         ResponseEntity<String> response = template.getForEntity("/", String.class);
         assertThat(response.getBody()).isEqualTo("Greetings from Spring Boot!");
     }
+
+    @Test
+    public void getTest() throws Exception {
+        ResponseEntity<String> response = template.getForEntity("/test", String.class);
+        assertThat(response.getBody()).isEqualTo("testing new endpoint");
+    }
 }
